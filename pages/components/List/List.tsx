@@ -1,35 +1,31 @@
-import { useState } from "react";
-
-interface Element {
+interface Items {
   id: number
   text: string
 }
-const listElements: Array<Element> = [
-  { id: 1, text: 'dever' },
-  { id: 2, text: 'prova' },
-]
+type Props = {
+  list: Items[]
+  setList: React.Dispatch<React.SetStateAction<Items[]>>
+}
 
-const List = () => {
-  const [list, setList] = useState(listElements)
+const List = ({ list, setList }: Props) => {
   return (
-    <ul>
-      {list.map((text) => (
-        <div
-          key={text.id}
-          className="flex justify-center p-2 align-middle text-slate-900"
-        >
-          <input
-            className="m-2"
-            type="checkbox"
-            name={text.text}
-            onChange={() => {
-              setList(list.filter((i) => i.id != text.id))
-            }}
-          />
-          <p>{text.text}</p>
-        </div>
-      ))}
-    </ul>
+    <div className="mx-auto flex rounded-md bg-slate-100">
+      <ul>
+        {list.map((text) => (
+          <div key={text.id} className="flex p-2 align-middle text-slate-900">
+            <input
+              className="m-2"
+              type="checkbox"
+              name={text.text}
+              onChange={() => {
+                setList(list.filter((i) => i.id != text.id))
+              }}
+            />
+            <p>{text.text}</p>
+          </div>
+        ))}
+      </ul>
+    </div>
   )
 }
 
