@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
-import List from './components/List/List'
-import TextInput from './components/TextInput/TextInput'
+import List from '../components/List/List'
+import TextInput from '../components/TextInput/TextInput'
 
 export interface Items {
   id: number

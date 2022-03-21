@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Items } from '../../index'
+import { Items } from '../../pages/index'
 export type Props = {
   list: Items[]
   setList: React.Dispatch<React.SetStateAction<Items[]>>
