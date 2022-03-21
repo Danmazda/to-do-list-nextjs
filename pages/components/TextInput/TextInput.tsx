@@ -30,7 +30,7 @@ const TextInput = ({ list, setList }: Props) => {
         hidden={buttonDisable}
         onClick={() => {
           // !!!!DESTRUCTURINGGGGG
-          setList((prevList) => [...prevList, newItem])
+          setList([...list, newItem])
           // console.log(document.getElementById('text').value)
         }}
       >
