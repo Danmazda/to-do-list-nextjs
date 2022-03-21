@@ -5,7 +5,7 @@ import { useState } from 'react'
 import List from './components/List/List'
 import TextInput from './components/TextInput/TextInput'
 
-interface Items {
+export interface Items {
   id: number
   text: string
 }
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 
       <List list={list} setList={setList} />
 
-      <TextInput list={list} setList={setList}/>
+      <TextInput list={list} setList={setList} />
     </div>
   )
 }

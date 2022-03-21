@@ -1,13 +1,5 @@
 import { useState } from 'react'
-
-interface Items {
-  id: number
-  text: string
-}
-type Props = {
-  list: Items[]
-  setList: React.Dispatch<React.SetStateAction<Items[]>>
-}
+import { Props } from '../List/List'
 
 // Mesmo Tipo de classes que os itens da lista, estudar forma de repetir
 const TextInput = ({ list, setList }: Props) => {
@@ -24,7 +16,7 @@ const TextInput = ({ list, setList }: Props) => {
         placeholder="Insert new task here"
         id="text"
         onChange={(e) => {
-          let value = e.target.value
+          const value = e.target.value
           if (value.length === 0) {
             setButtonDisable(true)
           } else {
@@ -37,7 +29,7 @@ const TextInput = ({ list, setList }: Props) => {
         className="mx-2 mb-1 w-1/2 rounded-md bg-slate-400 px-4 py-1 text-lg text-neutral-900"
         hidden={buttonDisable}
         onClick={() => {
-          //!!!!DESTRUCTURINGGGGG
+          // !!!!DESTRUCTURINGGGGG
           setList((prevList) => [...prevList, newItem])
           // console.log(document.getElementById('text').value)
         }}
