@@ -1,6 +1,4 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 import { useState } from 'react'
 import List from './components/List/List'
 import TextInput from './components/TextInput/TextInput'

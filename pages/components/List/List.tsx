@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Items } from '../../index'
-import TextInput from '../TextInput/TextInput'
 export type Props = {
   list: Items[]
   setList: React.Dispatch<React.SetStateAction<Items[]>>
