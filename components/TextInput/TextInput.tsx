@@ -10,8 +10,18 @@ const TextInput = ({ list, setList }: Props) => {
   })
   const [inputValue, setInputValue] = useState('')
 
+  function handleSubmit(e: React.FormEvent<HTMLElement>) {
+    e.preventDefault()
+    setList([...list, newItem])
+    setInputValue('')
+  }
   return (
-    <div className="flex  flex-col items-center  p-2 text-slate-900">
+    <form
+      className="flex  flex-col items-center  p-2 text-slate-900"
+      onSubmit={(e) => {
+        handleSubmit(e)
+      }}
+    >
       <input
         className="m-2 w-1/2 rounded-md text-center"
         type="text"
@@ -28,16 +38,14 @@ const TextInput = ({ list, setList }: Props) => {
       <button
         className="mx-2 mb-1 w-1/2 rounded-md bg-slate-400 px-4 py-1 text-lg text-neutral-900"
         hidden={buttonHidden}
-        onClick={() => {
-          // !!!!DESTRUCTURINGGGGG
-          setList([...list, newItem])
-          // console.log(document.getElementById('text').value)
-          setInputValue('')
+        type="submit"
+        onSubmit={(e) => {
+          handleSubmit(e)
         }}
       >
         Create new task
       </button>
-    </div>
+    </form>
   )
 }
 
