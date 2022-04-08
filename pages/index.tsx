@@ -8,8 +8,8 @@ export interface Items {
   text: string
 }
 const listElements: Array<Items> = [
-  { id: 1, text: 'dever' },
-  { id: 2, text: 'prova' },
+  { id: 1, text: 'Selecione para riscar' },
+  { id: 2, text: 'Aperte o botão abaixo apara remover' },
 ]
 
 const Home: NextPage = () => {
